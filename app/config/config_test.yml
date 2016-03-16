@@ -15,6 +15,9 @@ web_profiler:
 swiftmailer:
     disable_delivery: true
 
+parameters:
+    locale: en
+
 doctrine:
     dbal:
         dbname:   "todolist_test"
