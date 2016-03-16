@@ -1,4 +1,20 @@
-todolist
-========
+# todolist
 
-A Symfony project created on February 24, 2016, 11:32 am.
+
+## Development env
+
+```
+git clone https://github.com/nicosomb/todolist.git
+composer install
+bin/console doctrine:database:create
+bin/console doctrine:schema:update --force 
+bin/console server:run
+```
+
+## Test env
+
+```
+bin/console doctrine:database:create --env=test
+bin/console doctrine:schema:update --env=test --force 
+bin/phpunit
+```
