@@ -20,7 +20,7 @@ class TaskControllerTest extends WebTestCase
 
         $this->client->request('GET', '/task/create');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-        $this->assertContains('Save', $this->client->getResponse()->getContent());
+        $this->assertContains('task.form.save', $this->client->getResponse()->getContent());
     }
 
     public function testNewTaskSuccess()

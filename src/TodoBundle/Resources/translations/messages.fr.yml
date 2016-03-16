@@ -1,2 +1,10 @@
 hello_world: "Coucou tout le monde !"
 homepage.welcome_message: Bienvenue sur ma todolist
+task.form.label: Libellé
+task.form.description: Description
+task.form.duedate: Date d'échéance
+task.form.remindat: Rappel le
+task.form.createdat: Créée le
+task.form.updatedat: Mise à jour le
+task.form.status: Statut
+task.form.save: Ajouter

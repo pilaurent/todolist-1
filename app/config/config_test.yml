@@ -7,6 +7,8 @@ framework:
         storage_id: session.storage.mock_file
     profiler:
         collect: false
+    translator:
+        enabled: false
 
 web_profiler:
     toolbar: false
@@ -14,9 +16,6 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
-
-parameters:
-    locale: en
 
 doctrine:
     dbal:
