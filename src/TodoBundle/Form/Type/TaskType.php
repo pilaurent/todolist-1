@@ -2,6 +2,7 @@
 
 namespace TodoBundle\Form\Type;
 
+use Proxies\__CG__\TodoBundle\Entity\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -14,8 +15,8 @@ class TaskType extends AbstractType
         $builder
             ->add('label')
             ->add('description')
-            ->add('dueDate')//, null, array('widget' => 'single_text'))
-            ->add('remindAt')//, null, array('widget' => 'single_text'))
+            ->add('dueDate')
+            ->add('remindAt')
             ->add('createdAt')
             ->add('updatedAt')
             ->add('status')

@@ -26,6 +26,13 @@ class TaskController extends Controller
         if ($form->isValid()) {
             $em->persist($task);
             $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Task added with success'
+            );
+
+            return $this->redirect('/');
         }
 
         return $this->render('TodoBundle:Task:create.html.twig', array(
