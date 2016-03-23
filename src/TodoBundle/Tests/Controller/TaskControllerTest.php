@@ -9,6 +9,18 @@ class TaskControllerTest extends WebTestCase
     /** @var \Symfony\Bundle\FrameworkBundle\Client client */
     protected $client;
 
+    public function logInAs($username)
+    {
+        $crawler = $this->client->request('GET', '/login');
+        $form = $crawler->filter('button[type=submit]')->form();
+        $data = array(
+            '_username' => 'admin',
+            '_password' => 'test',
+        );
+
+        $this->client->submit($form, $data);
+    }
+
     private function getClient()
     {
         $this->client = static::createClient();
