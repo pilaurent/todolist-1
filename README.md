@@ -23,15 +23,15 @@ bin/phpunit
 * Category CRUD
 * Tag CRUD
 * Authentication
+* Assign task to user
 
 ## Todo
 
+* REST API
+* materializeCSS
 * list tasks for each category
 * list tasks for each tag
 * list day tasks (week, month)
 * calendar
 * categories color
-* Assign task to user
 * Sort tasks
-* User CRUD
-* REST API
