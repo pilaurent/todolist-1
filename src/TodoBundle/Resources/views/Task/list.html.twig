@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+    {% for task in tasks %}
+        <li>{{ task.label }}</li>
+    {% else %}
+        <li>{% trans %}task.empty_list{% endtrans %}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

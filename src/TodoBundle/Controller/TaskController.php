@@ -40,4 +40,16 @@ class TaskController extends Controller
         ));
 
     }
+
+    /**
+     * @Route("/task/list")
+     */
+    public function listAction()
+    {
+        $tasks = $this->getDoctrine()->getRepository('TodoBundle:Task')->findAll();
+        
+        return $this->render('TodoBundle:Task:list.html.twig', array(
+            'tasks' => $tasks,
+        ));
+    }
 }
