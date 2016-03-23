@@ -5,6 +5,7 @@ namespace TodoBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\VarDumper\VarDumper;
 use TodoBundle\Entity\Task;
 use TodoBundle\Form\Type\TaskType;
 
@@ -50,6 +51,23 @@ class TaskController extends Controller
             ->getRepository('TodoBundle:Task')
             ->findByUser(
                 $this->getUser()
+            );
+
+        return $this->render('TodoBundle:Task:list.html.twig', array(
+            'tasks' => $tasks,
+        ));
+    }
+
+    /**
+     * @Route("/task/category/{id}", requirements={"id" = "\d+"}, name="list_task_category")
+     */
+    public function listByCategoryAction(Request $request)
+    {
+        $tasks = $this
+            ->getDoctrine()
+            ->getRepository('TodoBundle:Task')
+            ->findByCategory(
+                $request->get('id')
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
