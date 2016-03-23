@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+    {% for category in categories %}
+        <li>{{ category.name }}</li>
+    {% else %}
+        <li>{% trans %}category.empty_list{% endtrans %}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

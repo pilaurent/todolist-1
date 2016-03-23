@@ -10,3 +10,7 @@ task.form.status: Statut
 task.form.save: Ajouter
 user.registration.minmessage: Le nom doit avoir 3 caractères minimum
 task.empty_list: Aucune tâche
+category.form.name: Nom
+category.form.description: Description
+category.form.color: Couleur
+category.form.save: Ajouter

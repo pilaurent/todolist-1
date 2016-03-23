@@ -38,7 +38,6 @@ class TaskController extends Controller
         return $this->render('TodoBundle:Task:create.html.twig', array(
             'form' => $form->createView(),
         ));
-
     }
 
     /**
@@ -47,7 +46,7 @@ class TaskController extends Controller
     public function listAction()
     {
         $tasks = $this->getDoctrine()->getRepository('TodoBundle:Task')->findAll();
-        
+
         return $this->render('TodoBundle:Task:list.html.twig', array(
             'tasks' => $tasks,
         ));
