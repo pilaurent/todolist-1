@@ -3,4 +3,31 @@
 {% block body %}
     <p>{% trans %}hello_world{% endtrans %}</p>
     <p>{% trans %}homepage.welcome_message{% endtrans %}</p>
+    <h2>Tasks</h2>
+    <ul>
+        <li>
+            <a href="{{ path('create_task') }}">Create new task</a>
+        </li>
+        <li>
+            <a href="{{ path('list_task') }}">List tasks</a>
+        </li>
+    </ul>
+    <h2>Tags</h2>
+    <ul>
+        <li>
+            <a href="{{ path('create_tag') }}">Create new tag</a>
+        </li>
+        <li>
+            <a href="{{ path('list_tag') }}">List tags</a>
+        </li>
+    </ul>
+    <h2>Categories</h2>
+    <ul>
+        <li>
+            <a href="{{ path('create_category') }}">Create new category</a>
+        </li>
+        <li>
+            <a href="{{ path('list_category') }}">List categories</a>
+        </li>
+    </ul>
 {% endblock %}

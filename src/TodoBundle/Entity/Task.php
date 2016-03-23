@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="task")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Task
 {
@@ -74,6 +75,24 @@ class Task
      * @ORM\ManyToOne(targetEntity="User", inversedBy="tasks")
      */
     protected $user;
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function timestamps()
+    {
+        if (is_null($this->createdAt)) {
+            $this->createdAt = new \DateTime();
+        }
+
+        $this->updatedAt = new \DateTime();
+    }
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * @return mixed

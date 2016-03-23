@@ -11,7 +11,7 @@ use TodoBundle\Form\Type\CategoryType;
 class CategoryController extends Controller
 {
     /**
-     * @Route("/category/create")
+     * @Route("/category/create", name="create_category")
      */
     public function createAction(Request $request)
     {
@@ -41,7 +41,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * @Route("/category/list")
+     * @Route("/category/list", name="list_category")
      */
     public function listAction()
     {

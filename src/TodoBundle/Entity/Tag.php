@@ -35,4 +35,27 @@ class Tag
      */
     protected $task;
 
+    public function __toString()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return Tag
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
 }

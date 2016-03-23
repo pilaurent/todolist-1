@@ -2,8 +2,8 @@
 
 namespace TodoBundle\Form\Type;
 
-use Proxies\__CG__\TodoBundle\Entity\Task;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,15 +25,11 @@ class TaskType extends AbstractType
             ->add('remindAt', null, array(
                 'label' => 'task.form.remindat',
             ))
-            ->add('createdAt', null, array(
-                'label' => 'task.form.createdat',
-            ))
-            ->add('updatedAt', null, array(
-                'label' => 'task.form.updatedat',
-            ))
             ->add('status', null, array(
                 'label' => 'task.form.status',
             ))
+            ->add('category')
+            ->add('tag')
             ->add('save', SubmitType::class, array(
                 'label' => 'task.form.save',
             ))
