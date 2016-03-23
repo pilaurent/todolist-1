@@ -8,3 +8,4 @@ task.form.createdat: Créée le
 task.form.updatedat: Mise à jour le
 task.form.status: Statut
 task.form.save: Ajouter
+user.registration.minmessage: Le nom doit avoir 3 caractères minimum

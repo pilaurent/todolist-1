@@ -1,6 +1,5 @@
 # todolist
 
-
 ## Development env
 
 ```
@@ -18,3 +17,11 @@ bin/console doctrine:database:create --env=test
 bin/console doctrine:schema:update --env=test --force 
 bin/phpunit
 ```
+
+## Todo
+
+* Category CRUD
+* Tag CRUD
+* User CRUD
+* Authentication : OK
+* REST API
