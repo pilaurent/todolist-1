@@ -5,7 +5,7 @@ namespace TodoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tag
+ * Tag.
  *
  * @ORM\Table(name="tag")
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Tag
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -50,12 +50,13 @@ class Tag
 
     /**
      * @param string $title
+     *
      * @return Tag
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
-
 }

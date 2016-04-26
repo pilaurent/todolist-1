@@ -5,7 +5,7 @@ namespace TodoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Task
+ * Task.
  *
  * @ORM\Table(name="task")
  * @ORM\Entity
@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Task
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -269,6 +269,4 @@ class Task
     {
         $this->category = $category;
     }
-
-
 }

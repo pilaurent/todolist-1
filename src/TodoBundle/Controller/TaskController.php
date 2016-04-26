@@ -5,7 +5,6 @@ namespace TodoBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\VarDumper\VarDumper;
 use TodoBundle\Entity\Task;
 use TodoBundle\Form\Type\TaskType;
 

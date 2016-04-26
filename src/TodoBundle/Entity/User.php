@@ -7,7 +7,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * User
+ * User.
  *
  * @ORM\Table(name="`user`")
  * @ORM\Entity
@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User extends BaseUser
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -52,11 +52,13 @@ class User extends BaseUser
 
     /**
      * @param mixed $name
+     *
      * @return User
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 }

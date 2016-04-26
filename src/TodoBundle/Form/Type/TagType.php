@@ -2,7 +2,6 @@
 
 namespace TodoBundle\Form\Type;
 
-use Proxies\__CG__\TodoBundle\Entity\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;

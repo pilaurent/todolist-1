@@ -67,7 +67,7 @@ class TaskControllerTest extends WebTestCase
         $data = array(
             'task[label]' => 'task 1',
             'task[description]' => 'go to the supermarket',
-            'task[status]' => "TEST",
+            'task[status]' => 'TEST',
         );
 
         $this->client->submit($form, $data);
