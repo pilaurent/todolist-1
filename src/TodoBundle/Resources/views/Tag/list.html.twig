@@ -3,7 +3,7 @@
 {% block body %}
     <ul>
     {% for tag in tags %}
-        <li>{{ tag.name }}</li>
+        <li>{{ tag.title }}</li>
     {% else %}
         <li>{% trans %}tag.empty_list{% endtrans %}</li>
     {% endfor %}
