@@ -106,11 +106,10 @@
             </div>
         </nav>
 
-
         <div class="container">
             {% for flash_message in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">
-                    {{ flash_message }}
+                    <div class="alert alert-success" role="alert">{{ flash_message }}</div>
                 </div>
             {% endfor %}
             {% block body %}{% endblock %}

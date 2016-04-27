@@ -14,9 +14,11 @@ class TaskType extends AbstractType
         $builder
             ->add('label', null, array(
                 'label' => 'task.form.label',
+                'attr' => ['class' => 'form-control'],
             ))
             ->add('description', null, array(
                 'label' => 'task.form.description',
+                'attr' => ['class' => 'form-control'],
             ))
             ->add('dueDate', null, array(
                 'label' => 'task.form.duedate',
@@ -26,11 +28,17 @@ class TaskType extends AbstractType
             ))
             ->add('status', null, array(
                 'label' => 'task.form.status',
+                'attr' => ['class' => 'form-control'],
             ))
-            ->add('category')
-            ->add('tag')
+            ->add('category', null, array(
+                'attr' => ['class' => 'form-control'],
+            ))
+            ->add('tag', null, array(
+                'attr' => ['class' => 'form-control'],
+            ))
             ->add('save', SubmitType::class, array(
                 'label' => 'task.form.save',
+                'attr' => ['class' => 'btn btn-default'],
             ))
         ;
     }

@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <ul>
+    <h1>Categories list</h1>
+    <table class="table table-striped table-bordered">
     {% for category in categories %}
-        <li><a href="{{ path('list_task_category', {id: category.id}) }}">{{ category.name }}</a></li>
+        <tr><td><a href="{{ path('list_task_category', {id: category.id}) }}">{{ category.name }}</a></td></tr>
     {% else %}
-        <li>{% trans %}category.empty_list{% endtrans %}</li>
+        <tr><td>{% trans %}category.empty_list{% endtrans %}</td></tr>
     {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
