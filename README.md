@@ -27,12 +27,12 @@ bin/phpunit
 * list tasks for each category
 * list day tasks (week, month)
 * Repository
+* Bootstrap
+* list tasks for each tag
+* categories color
 
 ## Todo
 
 * REST API
-* materializeCSS
-* list tasks for each tag
 * calendar
-* categories color
 * Sort tasks

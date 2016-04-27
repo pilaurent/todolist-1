@@ -5,8 +5,10 @@ namespace TodoBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use TodoBundle\Entity\Tag;
 use TodoBundle\Entity\Task;
 use TodoBundle\Form\Type\TaskType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class TaskController extends Controller
 {
@@ -75,15 +77,17 @@ class TaskController extends Controller
     }
 
     /**
-     * @Route("/task/tag/{id}", requirements={"id" = "\d+"}, name="list_task_tag")
+     * @Route("/task/tag/{tag}", requirements={"tag" = "\d+"}, name="list_task_tag")
+     * @ParamConverter("tag", class="TodoBundle:Tag")
      */
-    public function listByTagAction(Request $request)
+    public function listByTagAction(Tag $tag)
     {
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
-            ->findByCategory(
-                $request->get('id')
+            ->getTasksByTagAndUser(
+                $this->getUser(),
+                $tag
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(

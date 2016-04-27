@@ -3,6 +3,7 @@
 namespace TodoBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use TodoBundle\Entity\Tag;
 use TodoBundle\Entity\User;
 
 class TaskRepository extends EntityRepository
@@ -46,5 +47,16 @@ class TaskRepository extends EntityRepository
             date('Y-m-t'),
             $user
         );
+    }
+
+    public function getTasksByTagAndUser(User $user, Tag $tag)
+    {
+        return $this->createQueryBuilder('t')
+            ->innerJoin('t.tag', 'tag')
+            ->where('tag = :tag')->setParameter('tag', $tag)
+            ->andWhere('t.user = :user')->setParameter('user', $user)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 }

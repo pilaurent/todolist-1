@@ -4,7 +4,7 @@
     <h1>Tags list</h1>
     <table class="table table-striped table-bordered">
     {% for tag in tags %}
-        <tr><td>{{ tag.title }}</td></tr>
+        <tr><td><a href="{{ path('list_task_tag', {tag: tag.id}) }}">{{ tag.title }}</a></td></tr>
     {% else %}
         <tr><td>{% trans %}tag.empty_list{% endtrans %}</td></tr>
     {% endfor %}
