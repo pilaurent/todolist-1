@@ -3,6 +3,18 @@
 {% block body %}
     <p>{% trans %}hello_world{% endtrans %}</p>
     <p>{% trans %}homepage.welcome_message{% endtrans %}</p>
+    <h2>Filters</h2>
+    <ul>
+        <li>
+            <a href="{{ path('tasks_of_the_day') }}">Tasks of the day</a>
+        </li>
+        <li>
+            <a href="{{ path('tasks_of_the_week') }}">Tasks of the week</a>
+        </li>
+        <li>
+            Tasks of the month
+        </li>
+    </ul>
     <h2>Tasks</h2>
     <ul>
         <li>
