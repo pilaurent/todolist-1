@@ -26,10 +26,10 @@ bin/phpunit
 * Assign task to user
 * list tasks for each category
 * list day tasks (week, month)
+* Repository
 
 ## Todo
 
-* Repository
 * REST API
 * materializeCSS
 * list tasks for each tag

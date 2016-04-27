@@ -75,6 +75,23 @@ class TaskController extends Controller
     }
 
     /**
+     * @Route("/task/tag/{id}", requirements={"id" = "\d+"}, name="list_task_tag")
+     */
+    public function listByTagAction(Request $request)
+    {
+        $tasks = $this
+            ->getDoctrine()
+            ->getRepository('TodoBundle:Task')
+            ->findByCategory(
+                $request->get('id')
+            );
+
+        return $this->render('TodoBundle:Task:list.html.twig', array(
+            'tasks' => $tasks,
+        ));
+    }
+
+    /**
      * @Route("/task-of-the-day", name="tasks_of_the_day")
      */
     public function tasksOfTheDayAction(Request $request)

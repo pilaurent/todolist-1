@@ -10,7 +10,7 @@ class TaskRepository extends EntityRepository
     private function getTasksBetweenDates($minDate, $maxDate, $user)
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.dueDate >= :minDate')->setParameter('minDate', $minDate)
+            ->where('t.dueDate >= :minDate')->setParameter('minDate', $minDate)
             ->andWhere('t.dueDate <= :maxDate')->setParameter('maxDate', $maxDate)
             ->andWhere('t.user = :user')->setParameter('user', $user)
             ->getQuery()
