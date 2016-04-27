@@ -103,4 +103,19 @@ class TaskController extends Controller
             'tasks' => $tasks,
         ));
     }
+
+    /**
+     * @Route("/task-of-the-month", name="tasks_of_the_month")
+     */
+    public function tasksOfTheMonthAction(Request $request)
+    {
+        $tasks = $this
+            ->getDoctrine()
+            ->getRepository('TodoBundle:Task')
+            ->getAllOfTheMonth($this->getUser());
+
+        return $this->render('TodoBundle:Task:list.html.twig', array(
+            'tasks' => $tasks,
+        ));
+    }
 }

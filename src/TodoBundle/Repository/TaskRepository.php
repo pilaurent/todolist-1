@@ -34,7 +34,16 @@ class TaskRepository extends EntityRepository
     {
         return $this->getTasksBetweenDates(
             date('Y-m-d', strtotime('monday this week')),
-            date('Y-m-d', strtotime('sunday this week')),
+            date('Y-m-d 23:59:59', strtotime('sunday this week')),
+            $user
+        );
+    }
+
+    public function getAllOfTheMonth(User $user)
+    {
+        return $this->getTasksBetweenDates(
+            date('Y-m-01'),
+            date('Y-m-t'),
             $user
         );
     }
