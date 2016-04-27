@@ -82,7 +82,7 @@ class TaskController extends Controller
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
-            ->getAllOfTheDay();
+            ->getAllOfTheDay($this->getUser());
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
             'tasks' => $tasks,
@@ -97,7 +97,7 @@ class TaskController extends Controller
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
-            ->getAllOfTheWeek();
+            ->getAllOfTheWeek($this->getUser());
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
             'tasks' => $tasks,
