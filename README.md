@@ -37,3 +37,6 @@ bin/phpunit
 * Bug : URL dans les catégories / tags avec la notion de tri
 * REST API
 * calendar
+
+## 18052016
+# symfony
