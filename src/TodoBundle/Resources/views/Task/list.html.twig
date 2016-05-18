@@ -27,6 +27,7 @@
         </tr>
     {% for task in pagination %}
         <tr>
+
             <td class="col-xs-2">
                 {{ task.label }}
             </td>
@@ -45,6 +46,15 @@
                 {% for tag in task.tag %}
                 <a href="{{ path('list_task_tag', {tag: tag.id}) }}"><span class="glyphicon glyphicon-tag"></span> {{ tag.title }}</a>
                 {% endfor %}
+            </td>
+            <td>
+                <a href="mailto:pierrelaurent62@orange.fr?subject={{ "Partage de la tâche : #{task.label}" }}&body={{ "Titre : #{task.label} DueDate : #{task.dueDate|date("d-m-Y H:i")}" }}" ><span class="glyphicon glyphicon-envelope"></span></a>
+            </td>
+            <td>
+                <a href="{{ path('update_task', {id:task.id}) }}"><span class="glyphicon glyphicon-plus"></span></a>
+            </td>
+            <td>
+                <a href="{{ path('remove_task', {id:task.id}) }}"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
     {% else %}

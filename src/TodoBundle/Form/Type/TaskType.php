@@ -36,7 +36,7 @@ class TaskType extends AbstractType
             ->add('tag', null, array(
                 'attr' => ['class' => 'form-control'],
             ))
-            ->add('save', SubmitType::class, array(
+            ->add('save/update', SubmitType::class, array(
                 'label' => 'task.form.save',
                 'attr' => ['class' => 'btn btn-default'],
             ))

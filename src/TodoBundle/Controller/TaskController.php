@@ -2,6 +2,7 @@
 
 namespace TodoBundle\Controller;
 
+use phpDocumentor\Reflection\DocBlock\Tag\ReturnTag;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,13 +43,70 @@ class TaskController extends Controller
         ));
     }
 
+    /**
+     * @Route("/task/remove/{id}", name="remove_task")
+     */
+    public function removeAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $task = $em->getRepository('TodoBundle:Task')->find($id);
+
+        if (!$task) {
+            throw $this->createNotFoundException(
+                'No task found for id '.$id
+            );
+        }
+
+        $em->remove($task);
+        $em->flush();
+
+        return $this->redirect('/');
+    }
+
+    /**
+     * @Route("/task/update/{id}", name="update_task")
+     */
+    public function updateAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $task = $em->getRepository('TodoBundle:Task')->find($id);
+        $form = $this->createForm(TaskType::class, $task);
+
+        return $this->render('TodoBundle:Task:modify.html.twig', array(
+            'form' => $form->createView(),
+        ));
+
+    }
+
+    /**
+     * @Route("/task/update/label/{label}", name="update_tache")
+     */
+    public function saveAction($id,$label)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $task = $em->getRepository('TodoBundle:Task')->find($id);
+
+
+        if (!$task) {
+            throw $this->createNotFoundException(
+        'No task found for id '.$id
+            );
+        }
+
+        $task->setLabel($label);
+        $em->flush();
+
+        return $this->redirect('/');
+    }
+
     private function getPagination($request, $tasks)
     {
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $tasks,
             $request->query->getInt('page', 1),
-            2
+            10
         );
 
         return $pagination;
@@ -176,6 +234,21 @@ class TaskController extends Controller
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
             'tasks' => $tasks,
+        ));
+    }
+
+    /**
+     * @Route("/task/count/{tag}", name="count_task_by_tags")
+     */
+    public function countAction($id)
+    {
+        $tags = $this
+            ->getDoctrine()
+            ->getRepository('TodoBundle:Task')
+            ->getNbTasksbyTagAnduser($this->getUser(),$id);
+
+        return $this->render('TodoBundle:Task:list.html.twig', array(
+            'nbtags' => $tags,
         ));
     }
 }

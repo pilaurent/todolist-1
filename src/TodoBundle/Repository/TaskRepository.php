@@ -61,6 +61,16 @@ class TaskRepository extends EntityRepository
             ;
     }
 
+    # Calcul du nombre de tâche pour un tag
+    public function getNbTasksbyTagAnduser(User $user, Tag $tag){
+        return $this->createQueryBuilder('t')
+            ->where('tag = :tag')->setParameter('tag', $tag)
+            ->andWhere('t.user = :user')->setParameter('user', $user)
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
+
     public function getTasksByTagAndUser(User $user, Tag $tag, $field, $order)
     {
         return $this->createQueryBuilder('t')

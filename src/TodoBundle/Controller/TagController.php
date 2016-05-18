@@ -51,4 +51,20 @@ class TagController extends Controller
             'tags' => $tags,
         ));
     }
+
+    /**
+     * @Route("/tag/count/{tag}", name="count_task_by_tags")
+     */
+    public function countAction($id)
+    {
+        $tags = $this
+            ->getDoctrine()
+            ->getRepository('TodoBundle:Task')
+            ->getNbTasksbyTagAnduser($this->getUser(),$id);
+
+        return $this->render('TodoBundle:Tag:list.html.twig', array(
+            'tags' => $tags,
+        ));
+    }
+
 }

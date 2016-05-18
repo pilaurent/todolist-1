@@ -51,4 +51,25 @@ class CategoryController extends Controller
             'categories' => $categories,
         ));
     }
+
+    /**
+     * @Route("/category/remove/{id}", name="remove_category")
+     */
+    public function removeAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $category = $em->getRepository('TodoBundle:Category')->find($id);
+
+        if (!$category) {
+            throw $this->createNotFoundException(
+                'No category found for id '.$id
+            );
+        }
+
+        $em->remove($category);
+        $em->flush();
+
+        return $this->redirect('/');
+    }
 }

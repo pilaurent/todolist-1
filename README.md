@@ -40,3 +40,5 @@ bin/phpunit
 
 ## 18052016
 # symfony
+
+Quand je crée un nouvelle tâche, je veux que la date par défaut
