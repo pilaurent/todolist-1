@@ -30,9 +30,9 @@ bin/phpunit
 * Bootstrap
 * list tasks for each tag
 * categories color
+* Sort tasks
 
 ## Todo
 
 * REST API
 * calendar
-* Sort tasks
