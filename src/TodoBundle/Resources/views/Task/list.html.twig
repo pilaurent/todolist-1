@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <h1>Tasks list</h1>
     <table class="table table-striped table-bordered">
         <tr>
             <th>
-                Title
+                Title <a href="{{ path('list_task', { 'field': 'label', 'order': 'desc'} ) }}"><span class="glyphicon glyphicon-chevron-up"></span></a>  <a href="{{ path('list_task') }}"><span class="glyphicon glyphicon-chevron-down"></span></a>
             </th>
             <th>
-                Due date
+                Due date <a href="{{ path('list_task', {'field': 'dueDate', 'order': 'desc'} ) }}"><span class="glyphicon glyphicon-chevron-up"></span></a>  <a href="{{ path('list_task', {'field': 'dueDate'} ) }}"><span class="glyphicon glyphicon-chevron-down"></span></a>
             </th>
             <th>
-                Created at
+                Created at <a href="{{ path('list_task', {'field': 'createdAt', 'order': 'desc'} ) }}"><span class="glyphicon glyphicon-chevron-up"></span></a>  <a href="{{ path('list_task', {'field': 'createdAt'} ) }}"><span class="glyphicon glyphicon-chevron-down"></span></a>
             </th>
             <th>
                 Category

@@ -3,6 +3,7 @@
 namespace TodoBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use TodoBundle\Entity\Category;
 use TodoBundle\Entity\Tag;
 use TodoBundle\Entity\User;
 
@@ -49,12 +50,39 @@ class TaskRepository extends EntityRepository
         );
     }
 
-    public function getTasksByTagAndUser(User $user, Tag $tag)
+    public function getTasksByCategoryAndUser(User $user, $category, $field, $order)
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.user = :user')->setParameter('user', $user)
+            ->andWhere('t.category = :category')->setParameter('category', $category)
+            ->orderBy('t.'.$field, $order)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function getTasksByTagAndUser(User $user, Tag $tag, $field, $order)
     {
         return $this->createQueryBuilder('t')
             ->innerJoin('t.tag', 'tag')
             ->where('tag = :tag')->setParameter('tag', $tag)
             ->andWhere('t.user = :user')->setParameter('user', $user)
+            ->orderBy('t.'.$field, $order)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     * @param User $user
+     * @param $field Le champ sur lequel on va trier
+     * @param $order asc ou desc
+     */
+    public function getTasksOrdered(User $user, $field, $order)
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.user = :user')->setParameter('user', $user)
+            ->orderBy('t.'.$field, $order)
             ->getQuery()
             ->getResult()
             ;

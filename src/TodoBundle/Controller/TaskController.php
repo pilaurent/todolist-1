@@ -43,15 +43,23 @@ class TaskController extends Controller
     }
 
     /**
-     * @Route("/task/list", name="list_task")
+     * @Route("/task/list/{field}/{order}", requirements={
+     *     "field" : "label|dueDate|createdAt",
+     *     "order" : "asc|desc"
+     * }, defaults={
+     *     "field": "label",
+     *     "order": "asc"
+     * },  name="list_task")
      */
-    public function listAction()
+    public function listAction($field, $order)
     {
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
-            ->findByUser(
-                $this->getUser()
+            ->getTasksOrdered(
+                $this->getUser(),
+                $field,
+                $order
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
@@ -60,15 +68,25 @@ class TaskController extends Controller
     }
 
     /**
-     * @Route("/task/category/{id}", requirements={"id" = "\d+"}, name="list_task_category")
+     * @Route("/task/category/{id}/{field}/{order}", requirements={
+     *     "id" = "\d+",
+     *     "field" : "label|dueDate|createdAt",
+     *     "order" : "asc|desc"
+     * }, defaults={
+     *     "field": "label",
+     *     "order": "asc"
+     * }, name="list_task_category")
      */
-    public function listByCategoryAction(Request $request)
+    public function listByCategoryAction(Request $request, $field, $order)
     {
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
-            ->findByCategory(
-                $request->get('id')
+            ->getTasksByCategoryAndUser(
+                $this->getUser(),
+                $request->get('id'),
+                $field,
+                $order
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
@@ -77,17 +95,26 @@ class TaskController extends Controller
     }
 
     /**
-     * @Route("/task/tag/{tag}", requirements={"tag" = "\d+"}, name="list_task_tag")
+     * @Route("/task/tag/{tag}/{field}/{order}", requirements={
+     *     "tag" = "\d+",
+     *     "field" : "label|dueDate|createdAt",
+     *     "order" : "asc|desc"
+     * }, defaults={
+     *     "field": "label",
+     *     "order": "asc"
+     * }, name="list_task_tag")
      * @ParamConverter("tag", class="TodoBundle:Tag")
      */
-    public function listByTagAction(Tag $tag)
+    public function listByTagAction(Tag $tag, $field, $order)
     {
         $tasks = $this
             ->getDoctrine()
             ->getRepository('TodoBundle:Task')
             ->getTasksByTagAndUser(
                 $this->getUser(),
-                $tag
+                $tag,
+                $field,
+                $order
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
