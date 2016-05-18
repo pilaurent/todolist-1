@@ -51,7 +51,7 @@ class TaskController extends Controller
      *     "order": "asc"
      * },  name="list_task")
      */
-    public function listAction($field, $order)
+    public function listAction(Request $request, $field, $order)
     {
         $tasks = $this
             ->getDoctrine()
@@ -62,8 +62,15 @@ class TaskController extends Controller
                 $order
             );
 
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tasks,
+            $request->query->getInt('page', 1),
+            5
+        );
+
         return $this->render('TodoBundle:Task:list.html.twig', array(
-            'tasks' => $tasks,
+            'pagination' => $pagination
         ));
     }
 
