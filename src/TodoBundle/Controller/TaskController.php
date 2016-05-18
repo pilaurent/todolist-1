@@ -42,6 +42,18 @@ class TaskController extends Controller
         ));
     }
 
+    private function getPagination($request, $tasks)
+    {
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tasks,
+            $request->query->getInt('page', 1),
+            2
+        );
+
+        return $pagination;
+    }
+
     /**
      * @Route("/task/list/{field}/{order}", requirements={
      *     "field" : "label|dueDate|createdAt",
@@ -62,15 +74,8 @@ class TaskController extends Controller
                 $order
             );
 
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $tasks,
-            $request->query->getInt('page', 1),
-            5
-        );
-
         return $this->render('TodoBundle:Task:list.html.twig', array(
-            'pagination' => $pagination
+            'pagination' => $this->getPagination($request, $tasks)
         ));
     }
 
@@ -97,7 +102,7 @@ class TaskController extends Controller
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
-            'tasks' => $tasks,
+            'pagination' => $this->getPagination($request, $tasks)
         ));
     }
 
@@ -112,7 +117,7 @@ class TaskController extends Controller
      * }, name="list_task_tag")
      * @ParamConverter("tag", class="TodoBundle:Tag")
      */
-    public function listByTagAction(Tag $tag, $field, $order)
+    public function listByTagAction(Request $request, Tag $tag, $field, $order)
     {
         $tasks = $this
             ->getDoctrine()
@@ -125,7 +130,7 @@ class TaskController extends Controller
             );
 
         return $this->render('TodoBundle:Task:list.html.twig', array(
-            'tasks' => $tasks,
+            'pagination' => $this->getPagination($request, $tasks)
         ));
     }
 
