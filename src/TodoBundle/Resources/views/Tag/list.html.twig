@@ -9,7 +9,7 @@
                 <a href="{{ path('list_task_tag', {tag: tag.id}) }}">
                     <span class="glyphicon glyphicon-tag"></span> {{ tag.title }}
                 </a>
-                {{ render(controller("TodoBundle:Tag:count", {'id': tag})) }}
+                {{ tag.task|length }}
             </td>
         </tr>
 

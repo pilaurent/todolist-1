@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba0f5155-fca3-42ce-af32-0cc2d5e94f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/pierre.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TodoBundle/Repository/TagRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Task/modify.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Controller/CategoryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Controller/TaskController.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Controller/TaskController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Form/Type/TaskType.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Form/Type/TaskType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Repository/TaskRepository.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Repository/TaskRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Category/list.html.twig" afterPath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Category/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php" afterPath="$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig" afterPath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Task/list.html.twig" afterPath="$PROJECT_DIR$/src/TodoBundle/Resources/views/Task/list.html.twig" />
     </list>
     <ignored path="todolist-1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.44959128">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -52,25 +40,33 @@
         <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.7916665">
-              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+              <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
               <folding>
                 <element signature="e#41#98#0#PHP" expanded="true" />
-                <element signature="e#1145#1161#1#PHP" expanded="true" />
-                <element signature="e#1491#1508#1#PHP" expanded="true" />
-                <element signature="e#1600#1631#0#PHP" expanded="true" />
+                <element signature="e#1257#1273#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TagRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TodoBundle/Repository/TagRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6539509">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+            <state vertical-scroll-proportion="-8.125">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="23" />
               <folding>
                 <element signature="e#41#75#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tag.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.625">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,9 +88,10 @@
         <option value="$PROJECT_DIR$/src/TodoBundle/Resources/views/Category/list.html.twig" />
         <option value="$PROJECT_DIR$/src/TodoBundle/Controller/TaskController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php" />
-        <option value="$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig" />
         <option value="$PROJECT_DIR$/src/TodoBundle/Repository/TagRepository.php" />
+        <option value="$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php" />
+        <option value="$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php" />
+        <option value="$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig" />
       </list>
     </option>
   </component>
@@ -590,38 +587,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.106267">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Entity/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6594006">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TodoBundle/Repository/TaskRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1470587">
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
           <folding>
             <element signature="e#41#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.416667">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-          <folding>
-            <element signature="e#1604#1625#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -652,12 +623,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7916665">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <folding>
+            <element signature="e#1604#1625#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2916665">
-          <caret line="244" column="21" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="21" />
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="68" />
           <folding>
-            <element signature="e#41#93#0#PHP" expanded="true" />
             <element signature="e#1372#1389#1#PHP" expanded="true" />
             <element signature="e#1841#1858#1#PHP" expanded="true" />
             <element signature="e#1961#1995#0#PHP" expanded="true" />
@@ -680,10 +668,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Entity/Task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Entity/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.625">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -691,23 +687,29 @@
     <entry file="file://$PROJECT_DIR$/src/TodoBundle/Controller/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7916665">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
           <folding>
             <element signature="e#41#98#0#PHP" expanded="true" />
-            <element signature="e#1145#1161#1#PHP" expanded="true" />
-            <element signature="e#1491#1508#1#PHP" expanded="true" />
-            <element signature="e#1600#1631#0#PHP" expanded="true" />
+            <element signature="e#1257#1273#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TodoBundle/Repository/TagRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6539509">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="23" />
           <folding>
             <element signature="e#41#75#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoBundle/Resources/views/Tag/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44959128">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

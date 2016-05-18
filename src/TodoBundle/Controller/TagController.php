@@ -3,10 +3,12 @@
 namespace TodoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\VarDumper\VarDumper;
 use TodoBundle\Entity\Tag;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use TodoBundle\Form\Type\TagType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class TagController extends Controller
 {
@@ -54,16 +56,12 @@ class TagController extends Controller
 
     /**
      * @Route("/tag/count/{tag}", name="count_task_by_tags")
+     * @ParamConverter("tag", class="TodoBundle:Tag")
      */
-    public function countAction($id)
+    public function countAction($tag)
     {
-        $tags = $this
-            ->getDoctrine()
-            ->getRepository('TodoBundle:Task')
-            ->getNbTasksbyTagAnduser($this->getUser(),$id);
-
         return $this->render('TodoBundle:Tag:list.html.twig', array(
-            'tags' => $tags,
+            'tag' => $tag,
         ));
     }
 
